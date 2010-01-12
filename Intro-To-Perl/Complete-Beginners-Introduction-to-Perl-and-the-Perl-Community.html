@@ -196,7 +196,7 @@ img#me05 {top: 43px;left: 36px;}
   <li>$ - scalar</li>
   <li>@ - array</li>
   <li>% - hash</li>
-<ul>
+</ul>
 <li><a href="variables.pl.html">More on variables</a></li>
 <ul>
 </div>
@@ -213,7 +213,6 @@ while (<>) {
 </div>
 
 
-
 <div class="slide">
 <h1>Special Variables &amp; The Default Variable</h1>
 
@@ -222,12 +221,228 @@ while (<>) {
   <li>see <code>perlvar</code>
   <li>Many Perl operators either set <code>$_</code> or use its value if no other is given<li>
 <pre>
-  while (@friends) {
+  for (@friends) {
     print;
   }
 </pre>
 </ul>
 </div>
+
+
+<div class="slide">
+<h1>Operators and Functions</h1>
+<ul>
+  <li>Routines built into the language to do "stuff"</li>
+  <li>see <code>perlop</code> and  <code>perlfunc</code> 
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Arithmetic Operators</h1>
+<ul>
+  <li>+ add</li>
+  <li>- subtract</li>
+  <li>* multiply</li>
+  <li>/ divide</li>
+  <li>% modulus (finds the remainder of division of one number divided by another)</li>
+  <li>** exponentiation</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Shortcut Operators</h1>
+<ul>
+  <li>$total = $total + $amount</li>
+  <li>can be abbreviated to</li>
+  <li>$total += $amount</li>
+  <li></li>
+  <li>$x++ is the same as $x = $x + 1</li>
+  <li>$x-- is the same as $x = $x - 1</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>String Operators</h1>
+<ul>
+  <li>Concatenation (.)</li>
+  <li>$name = $firstname . ' ' . $lastname;</li>
+  <li>Repetition (x)</li>
+  <li>$funny = 'lol ' x 5;</li>
+  <li>$line = '-' x 80;</li>
+  <li>$page .= $line;</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>File Test Operators</h1>
+<ul>
+  <li>-e $file</li>
+  <li>-r $file &nbsp;   &nbsp;   -w $file</li>
+  <li>-d $file &nbsp;   &nbsp;   -T $file</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Functions</h1>
+<ul>
+ <li>Have longer names than operators</li>
+ <li>Can take more arguments than operators</li>
+ <li>Arguments follow the function name</li>
+ <li>See perlfunc for a complete list of Perl's built-in functions</li>
+ <li>can return scalars or lists (or nothing)</li>
+ <li><a href="functions.pl.html">More on Functions and Operators</a></li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Conditional Constructs</h1>
+<ul>
+  <li>Conditional constructs allow us to choose different routes of execution through the program</li>
+  <li>the unit of program execution is a block of code</li>
+  <li>Blocks are delimited with braces { ... }</li>
+  <li>conditional Blocks are controlled by the evaluation of an expression.</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>What is Truth?</h1>
+<ul>
+  <li>In Perl it is easier to answer "what is false?"</li>
+  <li>0 (the number)</li>
+  <li>'' (the empty string)</li>
+  <li>() (an empty list)</li>
+  <li>undef (an undefined value)</li>
+<ul>
+</div>
+
+<div class="slide">
+<h1>Comparison Operators</h1>
+<ul>
+  <li>$x == $y</li>
+  <li>$x eq $y</li>
+  <li>$x != $y</li>
+  <li>$x ne $y</li>
+  <li>$x > $y</li>
+  <li>$x gt $y</li>
+  <li>$x >= $y</li>
+  <li>$x ge $y</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Comparison Examples</h1>
+<ul>
+<li> 62 > 42 # true</li>
+<li>'0' == (3 * 2) - 6 # true</li>
+<li>'apple' gt 'banana' # false</li>
+<li>'apple' == 'banana' # true(!)</li>
+<li>1 + 2 == '3 bears' # true</li>
+<li>1 + 3 == 'three' # false</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Boolean Operators</h1>
+<ul>
+  <li>EXPR_1 and EXPR_2</li>
+  <li> true if both are true</li>
+  <li>EXPR_1 or EXPR_2</li>
+  <li>true if either is true</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Control Structures</h1>
+<ul>
+  <li>if</li>
+  <li>else</li>
+  <li>elsif</li>
+  <li>while</li>
+  <li>for</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>if</h1>
+<ul>
+  <li>if (expression) { do stuff... } </li>
+  <li> executes "do stuff..." only if "expression" is true</li>
+  <pre>
+    if ($presenter eq 'Will') {
+      clap(); 
+    }
+ </pre>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>if ... else</h1>
+<ul>
+  <li>if (expression) { BLOCK1 } else { BLOCK2 } </li>
+  <pre>
+    if ($presenter eq 'Will') {
+      clap(); 
+    } else {
+      hiss();
+    }
+ </pre>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>if ... else ... else</h1>
+<ul>
+  <li>
+ <pre>if (expression) { BLOCK1 }
+elseif (expression2) { BLOCK2 }
+else { BLOCK3 }
+</pre> </li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>while</h1>
+<ul>
+  <li>
+ <pre>while (EXPR) { BLOCK }
+</pre> </li>
+<li>repeat BLOCK while EXPR is true</li>
+<ul>
+</div>
+
+<div class="slide">
+<h1>until</h1>
+<ul>
+  <li> the oposite of while</li>
+  <li>
+ <pre>until (EXPR) { BLOCK }
+</pre> </li>
+<li>execute BLOCK until EXPR is true</li>
+
+<ul>
+</div>
+
+
+
+
 
 
 
@@ -366,3 +581,18 @@ while (<>) {
 <!--   <li></li> -->
 <!-- <ul> -->
 <!-- </div> -->
+
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
