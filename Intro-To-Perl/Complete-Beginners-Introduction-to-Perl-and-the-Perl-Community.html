@@ -511,10 +511,64 @@ sub NAME {
 <pre>
 sub yyyymmdd {
     my @a = localtime();
-    my $yyyymmdd = sprintf( "%04d%02d%02d", $a[5] + 1900, $a[4] + 1, $a[3] );
+    my $yyyymmdd = sprintf( "%04d%02d%02d", $a[5] + 1900, $a[4] 
+      + 1, $a[3] );
+    return $yyyymmdd;
 }
 </pre>
 </div>
+
+<div class="slide">
+<h1>calling a Subroutine</h1>
+<ul>
+<li>&amp;yyyymmdd;</li>
+<li>yyyymmdd();</li>
+<li>yyyymmdd;</li>
+</ul>
+The last one only works if the sub has been predeclared.
+</div>
+
+<div class="slide">
+<h1> Subroutine Arguments</h1>
+<ul>
+<li>Functions become more useful if you can pass arguments to them</li>
+<li>yyyymmdd('yesterday');</li>
+<li>Arguments end up in the <code>@_</code> array within the sub</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Regular Expressions</h1>
+<ul>
+<li>Patterns that match strings</li>
+<li>a "mini-language" within Perl</li>
+<li>Key to perl's text processing power</li>
+<li>sometimes overused</li>
+<li>see perldoc perlre</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>The Match Operator</h1>
+<ul>
+  <li><code>m/PATTERN/</code></li>
+  <li>Works on $_ by defualt</li>
+  <li>in scalar context returns true if successful</li>
+  <li>in list context returns list of "captured" text</li>
+  <li>m is optional if you use / characters</li>
+  <li>with m you can use any delimiters</li>
+<ul>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -632,17 +686,12 @@ sub yyyymmdd {
 <!-- </div> -->
 
 
-<!-- <div class="slide"> -->
-<!-- <h1>Open To The Public</h1> -->
-<!-- <ul> -->
-<!-- <li>S5 1.1 is released under an explicit Public Domain license</li> -->
-<!-- <li>Contributors to S5 <strong>must</strong> be willing to accept those terms -->
-<!-- <ul> -->
-<!-- <li>In other words: if you submit a contribution, you are agreeing to abide by and place your contributions into the Public Domain along with S5</li> -->
-<!-- <li>On the other hand, anyone can freely use S5 for their own presentations or modify S5 to suit their needs</li> -->
-<!-- </ul></li> -->
-<!-- </ul> -->
-<!-- </div> -->
+<div class="slide">
+<h1>Acknowledgement</h1>
+<ul>
+<li>Much of the contents of this presentation was lifted from dave Cross's presentation: <a href="http://www.slideshare.net/davorg/introduction-to-perl-2659676">http://www.slideshare.net/davorg/introduction-to-perl-2659676</a></li>
+</ul>
+</div>
 
 
 
