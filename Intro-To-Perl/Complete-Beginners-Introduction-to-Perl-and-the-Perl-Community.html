@@ -440,14 +440,80 @@ else { BLOCK3 }
 <ul>
 </div>
 
+<div class="slide">
+<h1>for - more complex looping</h1>
+<ul>
+  <li>for (INIT; EXPR; INCR) { BLOCK }</li>
+  <li>Like C </li>
+<li>Execute INIT If EXPR is false, exit loop, otherwise execute BLOCK, execute INCR and retest EXPR</li>
+<ul>
+</div>
 
 
 
+<div class="slide">
+<h1>for</h1>
+<ul>
+  <li>An Example</li>
+<ul>
+<pre>
+for ($i = 1; $i <= 10; $i++) {
+  print "$i squared is " , $i * $i , "\n";
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>foreach</h1>
+<ul>
+  <li>foreach - simpler looping over lists</li>
+  <li>foreach VAR (LIST) {BLOCK}</li>
+  <li>For each element of LIST, set VAR to equal the element and execute BLOCK </li>
+<ul>
+<pre>
+  foreach my $i (1..10) {
+    print "$i squared is ", $i * $i, "\n";
+  }
+</pre>
+</div>
+
+<div class="slide">
+<h1>Beaking out of Loops</h1>
+<ul>
+  <li>next - jump to next iteration of loop</li>
+  <li>last - jump out of loop</li>
+  <li>redo - jump to start of same iteration of loop</li>
+<ul>
+<pre>
+  foreach my $i (1..10) {
+    print "$i squared is ", $i * $i, "\n";
+  }
+</pre>
+</div>
+
+<div class="slide">
+<h1>Subroutines</h1>
+<ul>
+  <li>Self contained "mini-programs" within your program</li>
+  <li>Make it easy to repeat code</li>
+<ul>
+<pre>
+sub NAME {
+  BLOCK
+}
+</pre>
+</div>
 
 
-
-
-
+<div class="slide">
+<h1>Subroutine Example</h1>
+<pre>
+sub yyyymmdd {
+    my @a = localtime();
+    my $yyyymmdd = sprintf( "%04d%02d%02d", $a[5] + 1900, $a[4] + 1, $a[3] );
+}
+</pre>
+</div>
 
 
 
@@ -471,6 +537,17 @@ else { BLOCK3 }
 </ul>
 </div>
 
+
+<div class="slide">
+<h1>What Next</h1>
+<ul>
+<li>Learning Perl 5th edition</li>
+<li>Review! Much (all?) of this content was lifted from <a href="http://www.slideshare.net/davorg/introduction-to-perl-2659676">"Introduction to Perl" by dave Cros</a></li>
+<li>PerlMonks <a href="http://www.perlmonks.org">http://perlmonks.org</a></li>
+<li>StackOverflow <small><a href="http://stackoverflow.com/questions/tagged/perl">http://stackoverflow.com/questions/tagged/perl</a></small></li>
+<li>IRC <small><a href="http://www.irc.perl.org/channels.mhtml">http://www.irc.perl.org/channels.mhtml</a></small> and <small><a href="http://pound.perl.org/">http://pound.perl.org/</a></small> </li>
+</ul>
+</div>
 
 <!-- <div class="slide"> -->
 <!-- <h1>How It Works</h1> -->
