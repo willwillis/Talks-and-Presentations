@@ -631,6 +631,100 @@ Matching something other than literal text
 </div>
 
 
+<div class="slide">
+<h1>Metacharacter examples</h1>
+<pre>
+while (<FILE>) { 
+  print if m|^http|; 
+  print if /\bperl\b/; 
+  print if /\S/; 
+  print if /\$\d.\d\d/; 
+}
+</pre>
+</div>
+
+
+<div class="slide">
+<h1>Quantifiers</h1>
+Specify the number of occurrences
+<ul>
+  <li>? - match zero or one</li>
+  <li>* - zero or more</li>
+  <li>+ match one of more</li>
+  <li>{n} - match exactly n</li>
+  <li>{n,} - match n or more</li>
+  <li>{n,m} - matche between n and m</li>
+
+<ul>
+</div> 
+
+<div class="slide">
+<h1>Quantifier examples</h1>
+<pre>
+while (<FILE>) { 
+  print if /so+n/;
+  print if /\d*\.\d+/;
+  print if /\bA\w{3}\b/;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
