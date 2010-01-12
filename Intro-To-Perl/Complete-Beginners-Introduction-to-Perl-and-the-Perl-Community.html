@@ -558,16 +558,77 @@ The last one only works if the sub has been predeclared.
   <li>in list context returns list of "captured" text</li>
   <li>m is optional if you use / characters</li>
   <li>with m you can use any delimiters</li>
+  <li><a href="regexp.pl.html">More on Regular Expressions</a>
+<ul>
+</div>
+
+<div class="slide">
+<h1>Matching Example</h1>
+<pre>
+while(<FILE>){
+    print if /foo/;
+    print if /bar/i;
+    print if m|http://|;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>Substitutions</h1>
+<ul>
+  <li><code>s/PATTERN/REPLACEMENT/</code></li>
+  <li>Works on $_ by defualt</li>
+  <li>in scalar context returns true if successful</li>
+  <li>in list context returns number of replacements</li>
+  <li>again, you can use any delimiters</li>
+<ul>
+</div>
+
+<div class="slide">
+<h1>Substitution Example</h1>
+<pre>
+while(<FILE>){
+    s/teh/the/gi;
+    s/freind/friend/gi;
+    s/sholud/should/gi;
+    print;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>Binding Operator</h1>
+<ul>
+  <li>If we want m// or s// to work on something other than $_ we need to use the binding operator</li>
+  <li>$name =~ s/Will/William/;</li>
 <ul>
 </div>
 
 
 
+<div class="slide">
+<h1>Metacharacters</h1>
+Matching something other than literal text
+<ul>
+<li>^ - matches start of string</li>
+<li>$ - matches end of string</li>
+<li>. - matches any character (except )</li>
+<li>\s - matches a whitespace character</li>
+<li>\S - matches a non-whitespace character</li>
+</ul>
+</div>
 
-
-
-
-
+<div class="slide">
+<h1>More Metacharacters</h1>
+<ul>
+<li>\d - matches any digit</li>
+<li>\D - matches any non-digit</li>
+<li>\w - matches any "word" character</li>
+<li>\W - matches any "non-word" character</li>
+<li>\b - matches a word boundry</li>
+<li>\B - matches anywhere except a word boundary</li>
+</ul>
+</div>
 
 
 
