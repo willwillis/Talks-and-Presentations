@@ -612,7 +612,7 @@ Matching something other than literal text
 <ul>
 <li>^ - matches start of string</li>
 <li>$ - matches end of string</li>
-<li>. - matches any character (except )</li>
+<li>. - matches any character (except new lines)</li>
 <li>\s - matches a whitespace character</li>
 <li>\S - matches a non-whitespace character</li>
 </ul>
@@ -638,7 +638,7 @@ while (<FILE>) {
   print if m|^http|; 
   print if /\bperl\b/; 
   print if /\S/; 
-  print if /\$\d.\d\d/; 
+  print if /\$\d\.\d\d/; 
 }
 </pre>
 </div>
@@ -653,7 +653,7 @@ Specify the number of occurrences
   <li>+ match one of more</li>
   <li>{n} - match exactly n</li>
   <li>{n,} - match n or more</li>
-  <li>{n,m} - matche between n and m</li>
+  <li>{n,m} - match between n and m</li>
 
 <ul>
 </div> 
