@@ -59,11 +59,11 @@
 
 <span class="comment-delimiter"># </span><span class="comment">String Functions
 </span>
-chop($<span class="variable-name">string</span>);
+chop($<span class="variable-name">string</span>); # Removes the last character from the string
 
-lc $<span class="variable-name">string</span>;
+chomp $<span class="variable-name">string</span>; # Removes only new lines from the string based on what #/ is for your system
 
-chomp $<span class="variable-name">string</span>;
+$string = lc($<span class="variable-name">string</span>); # assigns 
 
 
 
@@ -78,14 +78,13 @@ cos, sin, tan, exp, log, rand, sqrt;
 <span class="type">my</span> @<span class="underline"><span class="variable-name">array</span></span>      = qw<span class="string">(one two three four)</span>;
 <span class="type">my</span> $<span class="variable-name">next_value</span> = <span class="string">'five'</span>;
 
-push @<span class="underline"><span class="variable-name">array</span></span>, $<span class="variable-name">next_value</span>;
+push @<span class="underline"><span class="variable-name">array</span></span>, $<span class="variable-name">next_value</span>; # Puts a scalar on the end of your array
 
-pop @<span class="underline"><span class="variable-name">array</span></span>;
+pop @<span class="underline"><span class="variable-name">array</span></span>; # pulls the scalar off the end of the array and returns it
 
-shift @<span class="underline"><span class="variable-name">array</span></span>;
+unshift @<span class="underline"><span class="variable-name">array</span></span>, 1; # Puts a scalar on the beginning of the array
 
-unshift @<span class="underline"><span class="variable-name">array</span></span>, 1;
-
+shift @<span class="underline"><span class="variable-name">array</span></span>; # Pulls a scalar off the beginning of the array and returns it.
 
 
 <span class="comment-delimiter"># </span><span class="comment">Arrays and Strings
@@ -117,7 +116,7 @@ unshift @<span class="underline"><span class="variable-name">array</span></span>
     <span class="string">'Dec'</span> =&gt; 12
     );
 
-delete $<span class="variable-name">month</span>{12}; <span class="comment"># removes key/value pair
+delete $<span class="variable-name">month</span>{Dec}; <span class="comment"># removes key/value pair
 </span>
 <span class="keyword">if</span> ( exists $<span class="variable-name">month</span>{June} ) {
     print <span class="string">"It's June!"</span>; 
@@ -136,7 +135,10 @@ open(<span class="type">my</span> $<span class="variable-name">file</span>, <spa
 </span>
 <span class="type">my</span> @<span class="underline"><span class="variable-name">lines</span></span> = &lt;$<span class="variable-name">file</span>&gt;; <span class="comment"># all lines assigned to an array
 </span>
-close($<span class="variable-name">file</span>) || <span class="keyword">die</span> <span class="string">"how do I get here?"</span>;
+close($<span class="variable-name">file</span>) or <span class="keyword">die</span> <span class="string">"how do I get here?"</span>;
+
+Will forgot to talk about grep. tell him to fix this document!
+
 </pre>
   </body>
 </html>
